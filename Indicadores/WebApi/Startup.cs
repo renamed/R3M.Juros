@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
+using Services;
 
 namespace WebApi
 {
@@ -26,6 +28,24 @@ namespace WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Indicadores API",
+                    Description = "Microsserviço para a obtenção de indicadores",                    
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Renato Medeiros",
+                        Email = "renamedrj@gmail.com",
+                        Url = new Uri("https://github.com/renamed"),
+                    }
+                });
+            });
+
+            services.ConfigureServicesExtensions();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,11 +56,20 @@ namespace WebApi
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Indicadores");
+                c.RoutePrefix = "swagger";
+            });
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseAuthorization();
+            
 
             app.UseEndpoints(endpoints =>
             {
