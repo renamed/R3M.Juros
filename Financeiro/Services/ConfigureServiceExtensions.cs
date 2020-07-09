@@ -14,6 +14,7 @@ namespace Services
         public static void ConfigureServicesExtensions(this IServiceCollection services)
         {
             services.AddTransient<IFinanceiroService, FinanceiroService>();
+            services.AddTransient<IMetadataService, MetadataService>();
 
             services.ConfigureExternalServicesExtensions();
         }
