@@ -15,7 +15,7 @@ Para rodar os testes de unidade no microsserviço _Financeiro_, faça o seguinte
  $ dotnet test
 ```
 - O resultado dos testes aparecerá na tela
-![Resultado dos testes de unidade](https://pasteboard.co/JgNhrfT.png)
+- [https://pasteboard.co/JgNhrfT.png](https://pasteboard.co/JgNhrfT.png)
 
 ### Teste de Integração
 
@@ -27,7 +27,7 @@ $ cd IntegrationTests/
 $ dotnet test
 ```
 - O resultado dos testes aparecerá na tela
-![Resultado dos testes de integração](https://pasteboard.co/JgNlgrW.png)
+- [https://pasteboard.co/JgNlgrW.png](https://pasteboard.co/JgNlgrW.png)
 - Por fim, digite os comandos abaixo e dê ênter, um de cada vez
 ```sh
 $ docker-compose stop
