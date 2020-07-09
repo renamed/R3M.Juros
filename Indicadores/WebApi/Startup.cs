@@ -35,7 +35,7 @@ namespace WebApi
                 {
                     Version = "v1",
                     Title = "Indicadores API",
-                    Description = "Microsserviço para a obtenção de indicadores",                    
+                    Description = "MicrosserviÃ§o para a obtenÃ§Ã£o de indicadores",                    
                     Contact = new OpenApiContact
                     {
                         Name = "Renato Medeiros",

@@ -36,7 +36,7 @@ namespace WebApi
                 {
                     Version = "v1",
                     Title = "Financeiro API",
-                    Description = "MicrosserviÁo para o c·lculo de serviÁos financeiros",
+                    Description = "Microsservi√ßo para o c√°lculo de servi√ßos financeiros",
                     Contact = new OpenApiContact
                     {
                         Name = "Renato Medeiros",
