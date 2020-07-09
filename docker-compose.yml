@@ -1,0 +1,25 @@
+version: '3'
+services:
+    Indicadores:
+        tty: true
+        build: ./Indicadores
+        image: indicadores
+        container_name: indicadores
+        ports:
+            - 7666:80
+        networks:
+            - net  
+    Financeiro:
+        tty: true
+        build: ./Financeiro
+        image: financeiro
+        container_name: financeiro
+        ports:
+            - 8666:80
+        networks:
+            - net  
+        depends_on: 
+            - Indicadores
+networks:
+    net:
+        driver: bridge
